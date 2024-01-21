@@ -1,0 +1,1465 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* -----------------------------------------------basic style given here-------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+body {
+  width: 100%;
+}
+
+button.normal {
+  color: #465b52;
+  background-color: #fff;
+  padding: 15px 30px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.4s ease;
+}
+
+/*--------------------------------------------- custom styling to different elememnt------------------------------------------------- */
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #b8b7c8;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.09);
+  position: sticky;
+  /*this is enough for nav bar to not move*/
+  z-index: 978;
+  /*this is added for box shadow to see but reuired when used sticky*/
+  top: 0;
+  /*supporting for sticky nav bar not required although*/
+  left: 0;
+
+  /* box-shadow:h-offset (rightside) v-offset (down)  blur color; 
+        box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;*/
+}
+
+#navBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#navBar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+
+}
+
+#navBar li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 550;
+  color: rgb(4, 48, 85);
+  transition: 0.3s ease;
+}
+
+/* for responsive */
+
+#mobile {
+  display: none;
+  align-items: center;
+}
+
+#close {
+  display: none;
+  /*since it is visible in large screen */
+}
+
+#navBar li a:hover,
+#navBar li a.active {
+  color: rgb(86, 112, 226);
+  width: 20px;
+
+}
+
+#navBar li a.active::after,
+#navBar li a:hover::after {
+  content: '';
+  /*  width and height is for underline */
+  width: 30%;
+  height: 2px;
+  background: rgb(86, 112, 226);
+  position: absolute;
+  /*we are taking poition wrt to li element, li has 20 padding left n right so from left 20. and has 0 padding
+                              in bottom so we need it little down so -4 bottom */
+  bottom: -4px;
+  left: 20px;
+}
+
+/* -----------------------------------hero--------------------------------------------------- */
+
+#hero {
+  background-image: url(../hero4.png);
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+
+  /* in order to make img responsive, use b-p property  */
+  background-position: top 25% right 0;
+
+  padding: 0 80px;
+  /*since we need little bit center from left n right so 80px == padding in header also */
+  display: flex;
+  /**/
+  flex-direction: column;
+  /*by default it will be in row dirc, so changing it to column*/
+  align-items: flex-start;
+  /*starting from where flex start means from left.*/
+  justify-content: center;
+}
+
+#hero h4 {
+  padding-bottom: 15px;
+}
+
+#hero h1 {
+  color: rgb(86, 112, 226);
+}
+
+#hero button {
+  background: url(../button.png);
+  background-color: transparent;
+  padding: 14px 80px 14px 65px;
+  border: none;
+  color: rgb(146 9 9);
+  font-size: 16px;
+  font-weight: 700;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------features--------------------------------------------------------------- */
+
+#features {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#features .fe-items {
+  width: 180px;
+  padding: 25px 15px;
+  text-align: center;
+  border: 1px solid rgb(205, 212, 243);
+  box-shadow: 20px 20px 35px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  margin: 15px 0
+}
+
+#features .fe-items:hover {
+  box-shadow: 10px 10px 65px rgba(70, 62, 221, 0.1);
+  ;
+}
+
+#features .fe-items img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#features .fe-items h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  color: rgb(86, 112, 226);
+  background-color: #f3d9b7;
+}
+
+#features .fe-items:nth-child(2) h6 {
+  background-color: #f0f3b7;
+}
+
+#features .fe-items:nth-child(3) h6 {
+  background-color: #aaf2f6;
+}
+
+
+#features .fe-items:nth-child(4) h6 {
+  background-color: #ebb7f3;
+}
+
+#features .fe-items:nth-child(5) h6 {
+  background-color: #f8afada5;
+}
+
+#features .fe-items:nth-child(6) h6 {
+  background-color: #cae2ec;
+}
+
+
+/* --------------------------------------------------------products--------------------------------------------------------------- */
+
+#products {
+  text-align: center;
+}
+
+#products h6 {
+  font-size: 20px;
+}
+
+#products .product-con {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+#products .product {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 20px 20px 35px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  position: relative;
+}
+
+#products .product:hover {
+  box-shadow: 20px 20px 35px rgba(0, 0, 0, 0.09);
+}
+
+
+#products .product img {
+  width: 100%;
+  border-radius: 7px;
+}
+
+#products .product .description {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#products .product .description span {
+  color: #355e7f;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+#products .product .description h5 {
+  padding-top: 7px;
+  color: #355e7f;
+  font-size: larger;
+}
+
+#products .product .description i {
+  font-size: 13px;
+}
+
+.description h4 {
+  padding-top: 7px;
+  font-size: 15px;
+
+}
+
+.product .cart {
+  width: 40px;
+  height: 40px;
+  color: rgb(86, 112, 226);
+  line-height: 40px;
+  background-color: aliceblue;
+  border-radius: 50%;
+  border: 1px solid rgb(197 205 238);
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+}
+
+/* ------------------------------------------------------------------banner------------------------------------------------------- */
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: end;
+  background-image: url(../banner/b2.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#banner h4 {
+  color: #cae2ec;
+  font-size: 17px;
+}
+
+#banner h2 {
+  color: #f4bd75;
+  font-size: 35px;
+  padding: 10px 0;
+}
+
+#banner h2 span {
+  color: #cae2ec;
+}
+
+#banner button:hover {
+  background-color: #cce7d0;
+  color: #eca64c;
+}
+
+/* --------------------------------------------------------new Arrivals--(same as products )-------------------------------------------------------- */
+
+/* ----------------------------------------------------small banners side by side ----------------------------------------------- */
+
+#small-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+
+#small-banner .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  background-image: url(../banner/b17.jpg);
+  min-width: 580px;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* since we have same class name for both cards so adding b2 class to card2 n then justing adding img to b2 in style  */
+#small-banner .b2 {
+  background-image: url(../banner/b10.jpg);
+}
+
+#small-banner h4 {
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#small-banner h2 {
+  color: whitesmoke;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#small-banner span {
+  color: whitesmoke;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+button.white {
+  color: whitesmoke;
+  background-color: transparent;
+  padding: 11px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid whitesmoke;
+  outline: none;
+  transition: 0.4s ease;
+}
+
+/* we need to add hover effect when we hover onto card not button  */
+
+#small-banner .banner-box:hover button {
+  background-color: #67aa71;
+  border: 1px solid #67aa71;
+}
+
+/* -------------------------------------------banner 3------------------------------------------------------------ */
+
+#banner3 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 80px;
+  /* height: 45vh; */
+}
+
+
+#banner3 .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  background-image: url(../banner/b7.jpg);
+  min-width: 30%;
+  height: 30vh;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20%;
+}
+
+#banner3 h2 {
+  color: whitesmoke;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+#banner3 h3 {
+  color: #0d7378;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+#banner3 .b3 {
+  background-image: url(../banner/b4.jpg);
+}
+
+#banner3 .b4 {
+  background-image: url(../banner/b18.jpg);
+}
+
+/* ------------------------------------------------------newsletter---------------------------------------------------- */
+
+#newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-image: url(https://cdn.pixabay.com/photo/2017/08/10/01/23/shopping-2616824_1280.jpg); */
+
+  background-image: url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=552&q=683);
+  background-size: cover;
+}
+
+#newsletter h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #465b52;
+}
+
+#newsletter p {
+  font-size: 15px;
+  font-weight: 500px;
+  color: #222;
+}
+
+#newsletter p span {
+  color: #eca64c;
+}
+
+#newsletter input {
+  height: 2.5rem;
+  width: 100%;
+  padding: 0 1.25rem;
+  font-size: 14px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+}
+
+#newsletter button {
+  margin-top: 1.15rem;
+  
+
+}
+
+/* --------------------------------------------------------------------footer---------------------------------------------------------- */
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 15px;
+}
+
+footer .logo {
+  margin-bottom: 30px;
+}
+
+footer h4 {
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+footer .follow {
+  margin-top: 20px;
+}
+
+footer .follow i {
+  padding-right: 4px;
+  cursor: pointer;
+  color: #b8b7c8;
+}
+
+footer .follow i:hover {
+  color: #222;
+}
+
+footer a:hover {
+  color: #355e7f;
+
+}
+
+footer .install .store-img img {
+  border: 1px solid burlywood;
+  border-radius: 6px;
+  margin: 10px 0 15px 0;
+  cursor: pointer;
+}
+
+footer .store-img img:hover {
+  box-shadow: 4px 4px 10px bisque;
+}
+
+footer .copyrights {
+  width: 100%;
+  align-items: center;
+  margin-top: 5px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+/*                                                       Page SHOP */
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+#page-header {
+  background-image: url(../banner/b1.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 14px;
+}
+
+#page-header h2{
+  color: #789a9c;
+}
+
+#page-header p{
+  color: #cae2ec;
+}
+/* ---------------------------------------------------------------pagination------------------------------------------------------ */
+
+#pagination{
+  text-align: center;
+}
+
+#pagination a{
+  text-decoration: none;
+  padding: 15px 20px;
+  color: #cae2ec;
+  border-radius: 4px;
+  background-color: #6774bc;
+  font-size: 20px;
+}
+
+#pagination a i{
+  font-size: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------product------------------------------------------------------------ */
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+
+#product-details{
+  display: flex;
+  margin-top: 20px;
+}
+
+#product-details .single-pro-img{
+  width: 40%;
+  margin-right: 50px;
+}
+
+.small-img-group{
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-imgs{
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#product-details .single-pro-des{
+  width: 50%;
+  padding-top: 30px;
+}
+
+#product-details .single-pro-des h4{
+  padding: 40px 0 20px 0;
+
+}
+
+#product-details .single-pro-des h2{
+  font-size: 26px;
+  
+}
+
+#product-details .single-pro-des select{
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: #c5d5ec;
+  color: #120e09;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+#product-details .single-pro-des input{
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  font-size: 17px;
+  margin-right: 10px;
+}
+
+#product-details .single-pro-des button{
+  background-color: #9bb8cf;
+}
+
+#product-details .single-pro-des button:hover{
+  background-color: #92bfe7;
+  color: #355e7f;
+}
+
+#product-details .single-pro-des span{
+  line-height: 1.6rem;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------- */
+/* *********************************************blog page********************************************************** */
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+#page-header.blog-header{
+  background-image: url(../banner/b19.jpg);
+}
+/* it should have all styles as of page-header */
+
+#page-header.blog-header h2{
+  color: #516768;
+}
+
+/* --------------------------------------------------blog details-------------------------------------------------- */
+
+#blog{
+  padding: 150px 150px 0 150px; 
+}
+
+#blog .blog-box{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  padding-bottom: 90px;
+}
+
+
+#blog .blog-img{
+  width: 50%;
+  margin-right: 40px;
+}
+
+#blog .blog-img img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#blog .blog-details{
+  width: 50%;
+  
+}
+
+#blog .blog-details a{
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #120e09;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+#blog .blog-details a::after{
+  
+  content: '';
+  width: 50px;
+  height: 1px;
+ 
+  background-color: #120e09;
+  position: absolute;
+  top: 10px;
+  right: -60px;
+}
+
+#blog .blog-details a:hover{
+  color: #6774bc;
+}
+
+#blog .blog-details a:hover::after{
+  background-color:#6774bc;
+}
+
+#blog .blog-box h1{
+  position: absolute;
+  top: -40px;
+  left: 0;
+  font-size: 75px;
+  font-weight: 700;
+  color: #aeb4be;
+  z-index: -1;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/* **************************************************about page*********************************************************** */
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+#page-header.about-header{
+  background-image: url(../about/banner.png);
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+#about-pg img{
+  width: 50%;
+  height: auto;
+}
+
+#about-pg .a-class{
+  display: flex;
+  align-items: center;
+}
+
+#about-pg .a-class div{
+  padding-left: 50px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+#download-app{
+  text-align: center;
+}
+
+#download-app .video{
+  width: 70%;
+  height: 100%;
+  margin: 30px auto 0 auto;
+}
+
+#download-app .video video{
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+/* ----*********************************************************************************************----------------------------- */
+/* -----------------------------------------contact us page-------------------------------------------------------------------------- */
+/* ------------------------************************************************************************----------------------------------- */
+
+#contact-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#contact-details .c-details{
+  width: 40%;
+}
+
+#contact-details .c-details span,
+#contact-form form span{
+  font-size: 12px;
+}
+
+#contact-details .c-details h2,
+#contact-form form h2{
+  font-size: 26px;
+  line-height: 35px;
+  padding: 20px 0;
+}
+
+#contact-details .c-details h3{
+  font-size:15px ;
+  padding-bottom: 16px;
+}
+
+#contact-details .c-details li{
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+#contact-details .c-details li i{
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+#contact-details .c-details li p{
+  margin: 0;
+  font-size: 14px;
+}
+
+#contact-details .map{
+  width: 55%;
+  height: 400px;
+}
+
+#contact-details .map iframe{
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------------contact form details------------------------------------ */
+
+#contact-form{
+  /* margin: 0 40px ; */
+  margin: 30px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #b8b7c8;
+}
+
+#contact-form form{
+  width: 65%;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* #contact-form form span{
+  adding font size is similar to above span line 851 
+} 
+
+#contact-form form h2{
+  adding font size is similar to above h2 line 856
+}*/
+
+
+#contact-form form input,
+#contact-form textarea{
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid darkgray;
+}
+
+#contact-form form button{
+  background-color: #6774bc;
+  color: #f5faff
+}
+
+#contact-form .people div{
+  padding: 25px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+#contact-form .people div img{
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+#contact-form .people div p{
+  margin: 0;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+#contact-form .people div p span{
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------***********************cart page ****************************--------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+#cart{
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 400px;
+}
+
+#cart table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img{
+  width: 70px;
+}
+
+#cart table td:nth-child(1){
+  width: 100px;
+  text-align: center;
+}
+
+#cart table td:nth-child(2){
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(3){
+  width: 250px;
+  text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6){
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input{
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead{
+  border: 1px solid gainsboro;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table thead td{
+  font-weight: 700;
+  font-size: 18px;
+  padding: 15px 0;
+  text-transform: uppercase;
+}
+
+#cart table tbody tr td{
+  padding-top: 13px;
+}
+
+#cart table tbody td{
+  font-size: 13px;
+}
+
+/* ----------------------------------------------cart total details---------------------------------------------------- */
+
+#cart-details{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+ /* no need to add parent id or class if we have id as child  */
+
+#coupon{
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#coupon h3{
+  padding-bottom: 15px;
+}
+
+#coupon input{
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 20px;
+  border: 1px solid darkgrey;
+}
+
+#coupon button{
+  background-color: #6774bc;
+  color: #f5faff;
+  padding: 12px 20px;
+}
+
+#sub-total{
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid darkgrey;
+  padding: 30px;
+}
+
+#sub-total h3{
+  padding-bottom: 15px;
+}
+
+#sub-total table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#sub-total table td{
+  width: 50%;
+  padding: 10px;
+  font-size: 13px;
+  border: 1px solid darkgrey;
+}
+
+#sub-total button{
+  background-color: #6774bc;
+  color: #f5faff;
+  padding: 12px 20px; 
+}
+
+
+
+
+
+
+
+
+/* ---------------------------------MEDIA QUERIES FOR RESPONSIVE---for medium screen devices---------------------------------------- */
+
+@media (max-width:799px) {
+  #navBar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: aliceblue;
+    padding: 80px 0 0 10px;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+  }
+
+  /* for javascript, in order to nav list when user clicks on menu */
+  #navBar.active {
+    /*if left space menu will not open.*/
+    right: 0;
+  }
+
+
+  #navBar li {
+    margin-bottom: 20px;
+  }
+
+  /* #hero{
+    height: auto;
+  } */
+
+  #mobile {
+    display: flex;
+    align-items: center;
+
+  }
+
+  #mobile i {
+    color: #355e7f;
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  #close {
+    display: initial;
+    /*bcoz we displayed none in large screen, so therefore this wont be seen in small screen too, thts y we need to 
+                               display it again .*/
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 24px;
+
+  }
+
+  /* -----------------------------------------------------hero-------------------------------------------------------- */
+
+  #hero {
+
+    height: 70vh;
+    padding: 0 80px;
+    background-position: top 30% right 30%;
+
+  }
+
+  /* ----------------------------------------------------------------------------------------------------------- */
+
+  #features {
+
+    justify-content: center;
+
+  }
+
+  #features .fe-items {
+
+    margin: 15px 15px;
+  }
+
+  .section-p1 {
+    padding: 40px 40px;
+  }
+
+  /* ---------------------------------------------------------------------------------------------------- */
+
+  #products .product-con {
+
+    justify-content: center;
+
+  }
+
+  #products .product {
+
+    margin: 15px;
+
+  }
+
+  /* -------------------------------------------------------------------------------------------------------------- */
+
+  #banner {
+
+    height: 20vh;
+
+  }
+
+  /* ------------------------------------------------------------------------------------------------------------------- */
+
+  #small-banner .banner-box {
+
+    min-width: 100%;
+    height: 30vh;
+
+  }
+
+  /* -------------------------------------------------------------------------------------------------------- */
+
+  #banner3 {
+
+    padding: 0 40px;
+    height: 45vh;
+  }
+
+  #banner3 .banner-box {
+
+    width: 28%;
+
+  }
+
+  /* ------------------------------------------------------------------------------------------------------------------------- */
+  /* ---------------------********************* contact page ***********************--------------------------------------- */
+  /* ---------------------------------------------------------------------------------------------------------------------------- */
+
+                            /* contact form  */
+
+  #contact-form form {
+    width: 45%;
+  }
+
+  /* ------------------------------------------------------cart page----------------------------------------------------------- *
+  ********************************------------------------------------------************************************************/
+  #cart-details {
+    flex-direction: column;
+  }
+  
+  #coupon {
+    width: 85%;
+  }
+  
+  #sub-total {
+    width: 85%; 
+  }
+
+}
+
+/* ------------------------*************************************************************************------------------------- */
+/* ----------------------------------------making responsive for mobile devices-------------------------------------------------- */
+/* -----------------------------------------*****************************************------------------------------------------------- */
+
+
+@media(max-width:470px) {
+
+  #header {
+    padding: 10px 30px;
+  }
+
+  /* ----------------------- */
+  #hero {
+
+    padding: 0 20px;
+    background-position: 55%;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  /* ----------------------------- */
+
+  .section-p1 {
+    padding: 20px;
+  }
+
+  #features .fe-items {
+    width: 155px;
+
+    margin: 0 0 15px 0;
+  }
+
+  #features {
+    justify-content: space-between;
+  }
+
+  /* -------------------------------- */
+
+  #products .product {
+    width: 100%;
+
+  }
+
+  /* -------------------------------- */
+
+  #banner {
+    height: 40vh;
+  }
+
+  #banner h2 {
+    font-size: 35px;
+  }
+
+  /* --------------------------------- */
+
+  #small-banner {
+    padding: 0 20px;
+  }
+
+  #small-banner .banner-box {
+
+    height: 40vh;
+  }
+
+  #small-banner .banner-box h2 {
+    font-size: 28px;
+  }
+
+  #small-banner .b2 {
+    margin-top: 20px;
+  }
+
+  /* ----------------------------------- */
+
+  #banner3 {
+    padding: 0 20px;
+    height: auto;
+  }
+
+  #banner3 .banner-box {
+    width: 100%;
+
+  }
+
+  
+  /* ----------------------------------------------------------------------------------------------------------------------------- */
+  /* ----------------------------------------------product detail page-----------------------------------------------  */
+   /* ------------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+  #product-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #product-details .single-pro-img {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  #product-details .single-pro-des {
+    width: 100%;
+    
+  }
+
+  /* ----------------------------------------------------------------------------------------------------------------------------- */
+  /* ---------------------------------------------------------blog page-------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------------------------------------------------------------ */
+
+  #blog {
+    padding: 100px 20px 0 20px;
+  }
+
+
+  #blog .blog-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+
+  #blog .blog-img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #blog .blog-details {
+    width: 100%;
+  }
+
+  /* ------------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------about page----------------------------------------------------------------------- */
+  /* ----------------------------------------------------------------------------------------------------------------------------- */
+
+  #about-pg .a-class {
+    flex-direction: column;
+  }
+
+  #about-pg img {
+    width: 100%;
+    
+  }
+
+  #about-pg .a-class div {
+    padding-left: 0;
+  }
+
+  #download-app .video {
+    width: 100%;
+  }
+  /* -------------------------------------------------------------------------------------------------------------------------- */
+  /* -------------------------***************************contact page******************************--------------------------------- */
+  /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+  #contact-details {
+    flex-direction: column;
+  }
+
+  #contact-details .c-details {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #contact-details .map {
+    width: 100%;
+    
+  }
+
+  #contact-form {
+    
+    margin: 10px;
+    padding: 30px 10px;
+    flex-wrap: wrap;
+    
+  }
+
+  #contact-form form {
+    width: 95%;
+   margin-bottom: 20px;
+  }
+   
+  /* ----------------------------------------------------------------------------------------------------------------------------- */
+  /* --------------------*******************************cart page*******************************----------------------------------- */
+  /* -------------------------------------------------------------------------------------------------------------------------- */
+
+  #coupon {
+    width: 100%;
+  }
+
+  #sub-total {
+    width: 100%;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+/* 
+NOTE:
+  1. line-height: gives height of element not including padding  */
