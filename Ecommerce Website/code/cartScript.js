@@ -10,9 +10,6 @@ var total;
 var proName;
 var proImage;
 
-// var costt = productInfo.
-// var quan = productInfo.
-
 
 const addToCart = () => {
 
